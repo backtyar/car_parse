@@ -23,7 +23,7 @@ def content(html_doc):
                 'price_som': i.find('div', class_='block price').find('p').find('br').next_sibling.get_text().strip(),
                 'name': i.find('h2', class_='name').contents[0].strip(),
                 'photo': i.find('img').get('src'),
-                'info':  ''.join([res for res in i.find('div', class_='block info-wrapper item-info-wrapper').stripped_strings]).replace('.,',''),
+                'info':  ''.join([res for res in i.find('div', class_='block info-wrapper item-info-wrapper').stripped_strings]).replace('.,','').replace(',', ''),
                 'views': i.find('span', class_='listing-icons views').get_text().strip(),
 
             }
